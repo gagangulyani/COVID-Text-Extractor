@@ -1,0 +1,12 @@
+{
+    "Oxygen": "(oxygen)|((cylinders?)|(refill?s?)|(cans?)|(concentrators?))",
+    "Available": "(available)",
+    "Verified": "(verfied)",
+    "Plasma": "(plasma)",
+    "Phone-Number": "(\\+\\d{1,2}\\s?)?0?1?[-.]?\\s?\\(?\\d{3,4}\\)?[\\s.-]?\\d{3,4}[\\s.-]?\\d{3,4}(\\/\\d{2,10})?",
+    "Required": "(required)",
+    "Help": "(help)",
+    "Food": "(food)",
+    "Urgent": "(urgent)",
+    "ICU-Beds": "(icu)?\\.?(beds)"
+}

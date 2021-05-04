@@ -1,18 +1,7 @@
 from pytesseract import pytesseract
+from json import load
 import cv2
-import re 
-
-
-def get_info(text):
-    pattern = (
-        r"(oxygen)|((cylinders?)|(refill?s?)|(plasma)|"
-        r"(cans?)|(concentrators?))|(available)|"
-        r"(\+91-?)?(\d{3}\.?\d{3}\.?\d{4})|(verfied])|"
-        r"(required)|(verfied)|(help)|(urgent)|(food)|"
-        r"(\(?[0]?\d{2,3}\)?.?\d{3,8}\-?/?\d{0,8})"
-        )
-
-    return [i.group() for i in re.finditer(pattern, text, re.IGNORECASE) if i.group()]
+from text_functions import get_info
 
 
 def resize_frame(frame, scale=0.85):
@@ -37,20 +26,29 @@ def to_text(filename, resized=False, show_image=False):
 
     for img in imgs:
 
-        results.append(pytesseract.image_to_string(img))
+        results.append("".join(pytesseract.image_to_string(img).splitlines()))
 
         if show_image:
             cv2.imshow(filename, img)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
 
-    return max([get_info(result) for result in results])
+    return max([get_info(result) for result in results], key=lambda x: len(x))
     
 
 if __name__ == '__main__':
     from sys import argv
+    from pathlib import Path
+    from random import choice
+
+    filename = "".join(argv[1:]).strip()
     
-    filename = "".join(argv[1:])
+    if not filename:
+        test_dir = Path('test')
+        filename =  choice([i for i in test_dir.iterdir()])
+        filename = str(filename)
+    
+    print(filename)
     
     resized = False
     show_image = False
