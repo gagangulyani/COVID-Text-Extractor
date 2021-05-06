@@ -56,6 +56,6 @@ if __name__ == '__main__':
     print(filename)
     
     resized = False
-    show_image = True
+    show_image = False
 
     print(to_text(filename, resized=resized, show_image=show_image))
