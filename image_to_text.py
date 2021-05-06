@@ -21,8 +21,9 @@ def to_text(filename, resized=False, show_image=False):
         
     imgs.append(img)
 
-    imgs.extend([cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 50),
-                 cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 171, 8)])
+    imgs.extend([cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 15, 8),
+                cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 255, 8),
+                cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 171, 8)])
 
     for img in imgs:
 
@@ -33,7 +34,11 @@ def to_text(filename, resized=False, show_image=False):
             cv2.waitKey(0)
             cv2.destroyAllWindows()
 
-    return max([get_info(result) for result in results], key=lambda x: len(x))
+    final = {}
+    for result in sorted(results, key=lambda x: len(x)):
+        final |= get_info(result)
+
+    return final
     
 
 if __name__ == '__main__':
@@ -51,6 +56,6 @@ if __name__ == '__main__':
     print(filename)
     
     resized = False
-    show_image = False
+    show_image = True
 
     print(to_text(filename, resized=resized, show_image=show_image))

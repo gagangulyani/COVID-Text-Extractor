@@ -3,10 +3,17 @@
     "Available": "(available)",
     "Verified": "(verfied)",
     "Plasma": "(plasma)",
-    "Phone-Number": "(\\+\\d{1,2}\\s?)?0?1?[-.]?\\s?\\(?\\d{3,4}\\)?[\\s.-]?\\d{3,4}[\\s.-]?\\d{3,4}(\\/\\d{2,10})?",
-    "Required": "(required)",
+    "Age": "(Age[ :-]+)(\\d\\d)",
+    "Blood-Groups": "(\\.?((A)|(A\\.?B)|(B))\\.?(\\+|\\-)|\\.?(O)(\\+|\\-))\\s",
+    "Phone-Numbers": "(\\+\\d{1,2}\\s?)?0?1?[-.]?\\s?\\(?\\d{3,4}\\)?[\\s.-]?\\d{3,4}[\\s.-]?\\d{3,4}(\\/\\d{2,10})?",
+    "Required": "(required?)|(need(ed)?)",
     "Help": "(help)",
-    "Food": "(food)",
+    "Food": "(food)|(break-?(fast)?)|(lunch)|(dinner)",
     "Urgent": "(urgent)",
-    "ICU-Beds": "(icu)?\\.?(beds)"
+    "ICU-Beds": "(icu)?\\.?(beds)",
+    "Ventilator": "(ventilator)",
+    "Ambulance": "(ambulance)",
+    "Without": "(without)",
+    "Free": "(free)",
+    "Report": "(report)"
 }
