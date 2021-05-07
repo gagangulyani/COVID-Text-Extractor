@@ -3,6 +3,7 @@
     "Available": "(available)",
     "Verified": "(verfied)",
     "Plasma": "(plasma)",
+    "Email": "\\S+@\\S+\\.\\S+",
     "Age": "(Age[ :-]+)(\\d\\d)",
     "Blood-Groups": "(\\.?((A)|(A\\.?B)|(B))\\.?(\\+|\\-)|\\.?(O)(\\+|\\-))\\W",
     "Phone-Numbers": "(\\+\\d{1,2}\\s?)?0?1?[-.]?\\s?\\(?\\d{3,4}\\)?[\\s.-]?\\d{3,4}[\\s.-]?\\d{3,4}(\\/\\d{2,10})?",

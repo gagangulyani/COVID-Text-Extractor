@@ -55,6 +55,7 @@ pacman -S tesseract-data-eng
 - **Oxygen** (if Oxygen, Cylinder, Cans, Concentrator or Refill is in text)
 - **Verified** (if source is verified)
 - **Plasma** (if keyword is used in text)
+- **Email** (all emails)
 - **Age** (extracts age)
 - **Blood-Groups** (All blood groups)
 - **Phone-Numbers** (All phone numbers)

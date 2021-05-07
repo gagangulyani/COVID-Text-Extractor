@@ -27,7 +27,7 @@ def to_text(filename, resized=False, show_image=False):
 
     for img in imgs:
 
-        results.append("".join(pytesseract.image_to_string(img).splitlines()))
+        results.append(" ".join(pytesseract.image_to_string(img).splitlines()))
 
         if show_image:
             cv2.imshow(filename, img)
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     
     if not filename:
         test_dir = Path('test')
-        filename =  choice([i for i in test_dir.iterdir()])
+        filename =  choice([i for i in test_dir.iterdir() if i.suffix != ".pdf"])
         filename = str(filename)
     
     print(filename)
