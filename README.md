@@ -52,7 +52,7 @@ pacman -S tesseract-data-eng
 
 ## What it Currently Extracts in Texts and Images:
 
-- **Oxygen** (Cylinder, Cans, Concentrator, Refills)
+- **Oxygen** (if Oxygen, Cylinder, Cans, Concentrator or Refill is in text)
 - **Verified** (if source is verified)
 - **Plasma** (if keyword is used in text)
 - **Age** (extracts age)
@@ -71,3 +71,4 @@ pacman -S tesseract-data-eng
 - **Fabiflu** (if Fabi-flu or Fabiflu is in text)
 - **Medicine** (if Medicine in text)
 - **Vaccine** (if vaccine or vaccination is in text)
+- **Remdesivir** (if Remdesivir is in text)
