@@ -8,7 +8,6 @@ Extract COVID related info from Images and Text using Google's Tesseract-OCR and
 - For **creating bots** (Telegram, Twitter...)
 - For **Automatting COVID Data extraction**, and more!
 
-
 # **USAGE:**
 
 ```bash
@@ -69,5 +68,6 @@ pacman -S tesseract-data-eng
 - **Without** (if without keyword is used in text)
 - **Free** (if Free keyword is used in text)
 - **Report** (if Report keyword is used in text)
-
-
+- **Fabiflu** (if Fabi-flu or Fabiflu is in text)
+- **Medicine** (if Medicine in text)
+- **Vaccine** (if vaccine or vaccination is in text)
