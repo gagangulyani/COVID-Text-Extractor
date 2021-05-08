@@ -13,6 +13,7 @@ def to_text(filename, resized=False, show_image=False):
     img = cv2.imread(filename)
     
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img = cv2.bilateralFilter(img, 5, 25, 25)
     imgs = []
     results = []
 
@@ -21,9 +22,8 @@ def to_text(filename, resized=False, show_image=False):
         
     imgs.append(img)
 
-    imgs.extend([cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 15, 8),
-                cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 255, 8),
-                cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 171, 8)])
+    imgs.extend([cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 17, 6),
+                cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 255, 3)])
 
     for img in imgs:
 
@@ -36,8 +36,8 @@ def to_text(filename, resized=False, show_image=False):
 
     final = {}
     for result in sorted(results, key=lambda x: len(x)):
-        final |= get_info(result)
-
+        final |= get_info(result, final)
+    
     return final
     
 
