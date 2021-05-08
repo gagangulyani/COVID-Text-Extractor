@@ -1,6 +1,6 @@
 # COVID-Text-Extractor
 
-Extract COVID related info from Images and Text using Google's Tesseract-OCR and Regular Expressions.
+Extract COVID related info from Images, PDFs and Texts using Google's Tesseract-OCR, PDFMiner.six and Regular Expressions.
 
 ## **How it can be used?**
 
