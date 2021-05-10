@@ -6,55 +6,55 @@ import cv2
 
 logging.basicConfig(level=logging.CRITICAL)
 
+
 def starred_adaptive_threshold(args):
     return cv2.adaptiveThreshold(*args)
 
+
+def ocr(img):
+    return pytesseract.image_to_string(img)
+
+
 def to_text(filename, show_image=False):
     logging.debug(f"Processing Image :{filename}")
-    img = cv2.imread(filename)
 
+    results = {}
+
+    img = cv2.imread(filename)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    
+
     logging.debug("Converted the Image to Grayscale")
 
+    logging.debug("Adding Bilarteral Filter on the image")
     img = cv2.bilateralFilter(img, 5, 25, 25)
 
-    logging.debug("Adding Bilarteral Filter on the image")
+    if show_image:
+        cv2.imshow("Bilateral Filter", img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
-    imgs = []
-    results = []
+    logging.debug("Applying OCR on first image")
+    results |= get_info(" ".join(ocr(img).splitlines()), results)
 
-    imgs.append(img)
+    
 
-    logging.debug("Creating Image tuple for preprocessing")
+    logging.debug("Creating Addional Images for Pre-Processing..")
 
     thresh_img_params = [
-         (img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 17, 6),
-         (img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 255, 3)
+        (img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 4),
+        (img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 255, 1)
     ]
 
     with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
-        logging.debug("Started Preprocessing Images")
+        logging.debug("Started Preprocessing and OCR on Additional Images")
         for result in executor.map(starred_adaptive_threshold, thresh_img_params):
-            imgs.append(result)
-    
-    logging.debug("Now Applying OCR on Images")
-    # imgs.append(cv2.adaptiveThreshold(thresh_img_params[0]))
+            results |= get_info(" ".join(ocr(result).splitlines()), results)
+            if show_image:
+                cv2.imshow("Threshold Image", result)
+                cv2.waitKey(0)
+                cv2.destroyAllWindows()
 
-    for img in imgs:
-        results.append(" ".join(pytesseract.image_to_string(img).splitlines()))
-
-        if show_image:
-            cv2.imshow(filename, img)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
-
-    logging.debug("Generating Result...")
-    final = {}
-    for result in sorted(results, key=lambda x: len(x)):
-        final |= get_info(result, final)
-
-    return final
+    return results
 
 
 if __name__ == '__main__':
