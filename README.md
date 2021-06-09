@@ -73,3 +73,4 @@ pacman -S tesseract-data-eng
 - **Medicine** (if Medicine in text)
 - **Vaccine** (if vaccine or vaccination is in text)
 - **Remdesivir** (if Remdesivir is in text)
+- **Platelets** (if Platelet or Platelets is in text)

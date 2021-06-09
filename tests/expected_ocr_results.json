@@ -1,0 +1,119 @@
+{
+    "photo_2021-05-01_14-51-49.jpg": {
+        "Help": [
+            "help"
+        ],
+        "Phone-Numbers": [
+            "8302484127"
+        ],
+        "Plasma": [
+            "plasma"
+        ],
+        "Report": [
+            "report"
+        ]
+    },
+    "photo_2021-05-06_12-12-26.jpg": {
+        "Age": [
+            "age : 60"
+        ],
+        "Blood-Groups": [
+            "a+"
+        ],
+        "Phone-Numbers": [
+            "9398380556",
+            "9966694904"
+        ],
+        "Plasma": [
+            "plasma"
+        ],
+        "Required": [
+            "required"
+        ]
+    },
+    "photo_2021-05-03_15-19-16.jpg": {
+        "Available": [
+            "available"
+        ],
+        "ICU-Beds": [
+            "beds"
+        ],
+        "Oxygen": [
+            "oxygen"
+        ],
+        "Phone-Numbers": [
+            "011-26655959/69"
+        ],
+        "Ventilator": [
+            "ventilator"
+        ]
+    },
+    "photo_2021-05-15_21-18-22.jpg": {
+        "Oxygen": [
+            "oxygen",
+            "concentrator"
+        ],
+        "Phone-Numbers": [
+            "9810065119",
+            "9891759997",
+            "9212269002",
+            "9212721073",
+            "9811056312"
+        ]
+    },
+    "Mixed1.jpeg": {
+        "Oxygen": [
+            "oxygen",
+            "concentrator"
+        ],
+        "Free": [
+            "free"
+        ],
+        "Available": [
+            "available"
+        ],
+        "Required": [
+            "need"
+        ],
+        "Phone-Numbers": [
+            "08068065385"
+        ]
+    },
+    "Mixed2.jpeg": {
+        "Oxygen": [
+            "oxygen"
+        ],
+        "Available": [
+            "available"
+        ],
+        "ICU-Beds": [
+            "beds"
+        ],
+        "Phone-Numbers": [
+            "18001025661",
+            "9311762964"
+        ]
+    },
+    "Mixed3.jpeg": {
+        "Available": [
+            "available"
+        ],
+        "Phone-Numbers": [
+            "08037429869"
+        ]
+    },
+    "Mixed4.jpeg": {
+        "Available": [
+            "available"
+        ],
+        "ECMO":[
+            "ecmo"
+        ],
+        "Phone-Numbers": [
+            "9911855571",
+            "9810184338",
+            "9911844484",
+            "9717895160"
+        ]
+    }
+}

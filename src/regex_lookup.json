@@ -1,12 +1,12 @@
 {
-    "Oxygen": "(oxygen)|((cylinders?)|(refill?s?)|(cans?)|(concentrators?))",
+    "Oxygen": "(oxygen)|((cylinders?)|(refill?s?)|(cans)|(concentrators?))",
     "Available": "(available)",
     "Verified": "(verfied)",
     "Plasma": "(plasma)",
-    "Email": "\\S+@\\S+\\.\\S+",
-    "Age": "(Age[ :-]+)(\\d\\d)",
-    "Blood-Groups": "(\\.?((A)|(A\\.?B)|(B))\\.?(\\+|\\-)|\\.?(O)(\\+|\\-))\\W",
-    "Phone-Numbers": "(\\+[019]{1,2}\\s?)?0?1?[-.]?\\s?\\(?\\d{3,4}\\)?[\\s.-]?\\d{3,4}[\\s.-]?\\d{3,4}(\\/\\d{2,10})?",
+    "Emails": "\\S+@\\S+\\.\\S+",
+    "Age": "\\s(age[ :-]+)(\\d\\d?)\\s?",
+    "Blood-Groups": "(\\s((A)|(A\\.?B)|(B))\\.?(\\+|\\-)|\\.?(O)(\\+|\\-))\\W",
+    "Phone-Numbers": "([ \\-\\+\\(]?\\d[\\)\\/]?){10,24}",
     "Required": "(required?)|(need(ed)?)",
     "Help": "(help)",
     "Food": "(food)|(break-?(fast)?)|(lunch)|(dinner)",
@@ -20,5 +20,7 @@
     "Medicine": "(medicines?)",
     "Remdesivir": "(remdesi?v?w?i?r?)",
     "Fabiflu": "(fabi?[ .-]?(flu)?)",
-    "Vaccine": "(vaccin[ea]?(tion)?)"
+    "Vaccine": "(vaccin[ea]?(tion)?)",
+    "Platelets": "(platelets?)",
+    "ECMO": "\\s(ecmo)\\s"
 }
